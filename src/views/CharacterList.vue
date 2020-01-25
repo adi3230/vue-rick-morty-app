@@ -1,27 +1,28 @@
 <template>
     <div class="character-list character-list__container">
         <div class="character-list__item" 
-                v-for="character in characterList" 
-                :key="character.id">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img :src="character.image"
-                            class="character-list__item-image"
-                            alt="Avatar">
-                        </div>
-                        <div class="flip-card-back">
-                            <h1>{{character.name}}</h1>
-                            <ul class="character-list__item-info">
-                                <li>{{character.species}}</li>
-                                <li>{{character.status}}</li>
-                                <li>{{character.gender}}</li>
-                                <li>{{character.location.name}}</li>
-                                <li>{{character.species}}</li>
-                            </ul>
-                        </div>
+            v-for="character in characterList" 
+            :key="character.id">
+            <div class="flip-card"
+                 :class="[`flip-card--${character.name.replace(/\s+/g, '-').toLowerCase()}`]">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img :src="character.image"
+                        class="character-list__item-image"
+                        alt="Avatar">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>{{character.name}}</h1>
+                        <ul class="character-list__item-info">
+                            <li>{{character.species}}</li>
+                            <li>{{character.status}}</li>
+                            <li>{{character.gender}}</li>
+                            <li>{{character.location.name}}</li>
+                            <li>{{character.species}}</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </template>

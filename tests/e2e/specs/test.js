@@ -6,3 +6,9 @@ describe('My First Test', () => {
     cy.contains('h1', 'Welcome to Your Vue.js App')
   })
 })
+describe('Ricky Morty', () => {
+  it('visit the ricky morty page', () => {
+    cy.visit('/ricky-morty')
+    cy.get('.character-list__item').find('.flip-card--morty-smith').trigger('mouseenter');
+  });
+});

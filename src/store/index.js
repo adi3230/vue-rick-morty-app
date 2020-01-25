@@ -20,7 +20,6 @@ export default new Vuex.Store({
   actions: {
     async fetchCharacterList({ commit }) {
       const response = await axios.get('/character');
-      console.log('result', response.data);
       if(Array.isArray(response.data.results)) {
         commit(SET_CHARACTER_LIST, response.data.results);
       }
